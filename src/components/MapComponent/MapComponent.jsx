@@ -4,11 +4,30 @@ import L from 'leaflet';
 import 'leaflet/dist/leaflet.css';
 import './MapComponent.css';
 
+// Default to New Delhi, India coordinates
+const DEFAULT_POSITION = [28.6139, 77.2090];
+const DEFAULT_ZOOM = 12;
+
 const RecenterAutomatically = ({ lat, lng }) => {
   const map = useMap();
   useEffect(() => {
     map.setView([lat, lng]);
   }, [lat, lng, map]);
+  return null;
+};
+
+const SetIndiaBounds = () => {
+  const map = useMap();
+  
+  useEffect(() => {
+    // Set approximate bounds for India
+    const indiaBounds = L.latLngBounds(
+      L.latLng(6.0, 68.0),  // Southwest corner
+      L.latLng(36.0, 98.0)  // Northeast corner
+    );
+    map.fitBounds(indiaBounds);
+  }, [map]);
+
   return null;
 };
 
@@ -19,7 +38,7 @@ const MapComponent = ({ position, path, isSimulating, droneIconUrl }) => {
 
   const createDroneIcon = useCallback(() => {
     return L.icon({
-      iconUrl: droneIconUrl || 'https://cdn-icons-png.flaticon.com/512/1570/1570887.png',
+      iconUrl: droneIconUrl || 'https://cdn-icons-png.freepik.com/512/3864/3864206.png?uid=R184490539&ga=GA1.1.759550159.1729487841',
       iconSize: [32, 32],
       iconAnchor: [16, 16],
       popupAnchor: [0, -16]
@@ -41,11 +60,12 @@ const MapComponent = ({ position, path, isSimulating, droneIconUrl }) => {
   return (
     <div className="map-container">
       <MapContainer
-        center={position || [51.505, -0.09]}
-        zoom={13}
+        center={position || DEFAULT_POSITION}
+        zoom={DEFAULT_ZOOM}
         ref={mapRef}
         zoomControl={false}
       >
+        <SetIndiaBounds />
         <TileLayer
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
