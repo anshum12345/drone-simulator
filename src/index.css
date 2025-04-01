@@ -11,3 +11,8 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+/* Leaflet specific fixes */
+.leaflet-control-attribution {
+  font-size: 9px;
+}

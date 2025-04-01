@@ -1,0 +1,125 @@
+.data-input-container {
+  background: white;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  margin-bottom: 20px;
+}
+
+.input-section, .search-section {
+  margin-bottom: 20px;
+}
+
+.input-section h3, .search-section h3 {
+  margin-top: 0;
+  color: #2c3e50;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.coordinate-input {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.coordinate-input input {
+  flex: 1;
+  padding: 10px 12px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 0.95rem;
+}
+
+.coordinate-input input:focus {
+  outline: none;
+  border-color: #3498db;
+}
+
+.add-button {
+  padding: 0 15px;
+  background-color: #2ecc71;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  transition: background-color 0.3s;
+}
+
+.add-button:hover {
+  background-color: #27ae60;
+}
+
+.add-button:disabled {
+  background-color: #bdc3c7;
+  cursor: not-allowed;
+}
+
+.search-input {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.search-input input {
+  flex: 1;
+  padding: 10px 12px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 0.95rem;
+}
+
+.search-button {
+  padding: 0 15px;
+  background-color: #3498db;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.search-button:hover {
+  background-color: #2980b9;
+}
+
+.search-button:disabled {
+  background-color: #bdc3c7;
+  cursor: not-allowed;
+}
+
+.recent-searches {
+  margin-top: 15px;
+}
+
+.recent-searches h4 {
+  margin: 10px 0 5px;
+  color: #7f8c8d;
+  font-size: 0.9rem;
+}
+
+.recent-searches ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.recent-searches li {
+  background-color: #f8f9fa;
+  padding: 5px 10px;
+  border-radius: 4px;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.recent-searches li:hover {
+  background-color: #e9ecef;
+}
